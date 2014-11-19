@@ -15,15 +15,15 @@ public class artificial_intelligence {
 		question3 = JOptionPane.showConfirmDialog(null,"Do you sometimes think of your past mistakes?","Question 3",JOptionPane.YES_NO_OPTION);
 		if(question1==0)
 		{
-			result += "You are the Science class!";
+			result = "You are the Science class!";
 		}
 		if(question2==0)
 		{
-			result += "\nYou are the English class!";
+			result = "\nYou are the English class!";
 		}
 		if(question3==0)
 		{
-			result += "\nYou are the History class!";
+			result = "\nYou are the History class!";
 		}
 		if(result.equals(""))
 		{
