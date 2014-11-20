@@ -20,6 +20,18 @@ public class gravity_project {
 				+ "7. Saturn\n"
 				+ "8. Uranus\n"
 				+ "9. Venus");
+		try
+		{
+			if(planet.equals(null))
+			{
+				System.exit(0);
+			}
+		}
+		catch(NullPointerException error)
+		{
+			System.exit(0);
+		}
+		
 		try{
 			choice = Integer.parseInt(planet);
 		}
@@ -56,7 +68,8 @@ public class gravity_project {
 			JOptionPane.showMessageDialog(null,"The program will now calculate your weight by the gravity of the planet you chose.");
 		}
 
-		switch(choice){ //Switch statement for the choice of planets
+		//Switch statement for the choice of planets
+		switch(choice){ 
 			case 1: gravity=1;
 				planet="Earth";
 				break;
