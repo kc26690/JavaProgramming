@@ -14,39 +14,44 @@ public class average_for {
    // main method begins execution of Java application
    public static void main( String args[] ) 
    {
-      int total,              // sum of grades input by user
-          gradeCounter,       // number of grades entered
-          gradeValue = 0,     // grade value
-          average;            // average of all grades
-      String grade;           // grade typed by user
-   	final int NumStudents = 5;
-   	  total = 0;              // clear total
-      gradeCounter = 0;       // prepare to loop
-   
-      // for each Student, read in the score and accumulate the total
-     for(gradeCounter = 0; gradeCounter < NumStudents; gradeCounter++) 
-     {  // loop 5 times
-
-         // prompt for input and read grade from user
-         grade = JOptionPane.showInputDialog("Enter integer grade:  " );
-         
-         // convert grade from a String to an integer
-         gradeValue = Integer.parseInt( grade );
-
-         // add gradeValue to total - notice that total had to be initialized
-         total = total + gradeValue;  
-
-        
-      }  // end for structure
-   
+	  String input;
+      int[][] students = new int[5][3];
+      int total=0,
+      	totalStudent1=0,
+      	totalStudent2=0,
+      	totalStudent3=0,
+      	totalStudent4=0,
+      	totalStudent5=0,
+      	averageStudent1=0,
+      	averageStudent2=0,
+      	averageStudent3=0,
+      	averageStudent4=0,
+      	averageStudent5=0;
       
-      average = total / gradeCounter;  // perform integer division to get the average
-
-      // display average of exam grades
-      JOptionPane.showMessageDialog( null, "Class average is " + average, "Class Average",
-         JOptionPane.INFORMATION_MESSAGE );
-
-       
+      int row=0,
+      	column = 0;
+      
+      for(row = 0; row < 5; row++)
+      {
+    	  
+    	  for(column = 0; column < 3; column++)
+    	  {
+    		  input = JOptionPane.showInputDialog("Enter your test score for test number (You only get 3 tests to enter!): "+(column+1));
+    		  students[row][column] = Integer.parseInt(input);
+    		  total += students[row][column];
+    		  
+    	  }//End nested for
+      }//End first for
+      
+      
+      totalStudent1 += students[0][0]+students[0][1]+students[0][2];
+      totalStudent2 += students[1][0]+students[1][1]+students[1][2];
+      totalStudent3 += students[2][0]+students[2][1]+students[2][2];
+      totalStudent4 += students[3][0]+students[3][1]+students[3][2];
+      totalStudent5 += students[4][0]+students[4][1]+students[4][2];
+      averageStudent1 = totalStudent1 / 3;
+      
+      
    }  // end method main
 
 }  // end class Average_for
