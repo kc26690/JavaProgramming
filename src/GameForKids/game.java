@@ -16,7 +16,6 @@ public class game {
 		int total=0;
 		int a=0,
 			b=0,
-			c=0,
 			guess=0,
 			questionsAsked=0;
 		ImageIcon picture = new ImageIcon("tum.jpg");
@@ -50,9 +49,8 @@ public class game {
 			{
 				a = gen.nextInt(100)+1;
 				b = Math.abs(gen.nextInt(100)+1);
-				c = Math.abs(gen.nextInt(100)+1);
 				
-				userChoice = JOptionPane.showInputDialog("What is "+a+"+"+b+"+"+c);
+				userChoice = JOptionPane.showInputDialog("What is "+a+"+"+b);
 				try
 				{
 					guess = Integer.parseInt(userChoice);
@@ -61,7 +59,7 @@ public class game {
 				{
 					JOptionPane.showMessageDialog(null,"Sorry! You entered the wrong number");
 				}
-				total = a+b+c;
+				total = a+b;
 				if(guess==total)
 				{
 					JOptionPane.showMessageDialog(null,"Congratulations! You got the answer! It was "+total);
@@ -81,9 +79,8 @@ public class game {
 			{
 				a = Math.abs(gen.nextInt(100)+1);
 				b = Math.abs(gen.nextInt(100)+1);
-				c = Math.abs(gen.nextInt(100)+1);
 				
-				userChoice = JOptionPane.showInputDialog("What is "+a+"-"+b+"-"+c);
+				userChoice = JOptionPane.showInputDialog("What is "+a+"-"+b);
 				try
 				{
 					guess = Integer.parseInt(userChoice);
@@ -92,7 +89,7 @@ public class game {
 				{
 					JOptionPane.showMessageDialog(null,"Sorry! You entered the wrong number");
 				}
-				total = a-b-c;
+				total = a-b;
 				if(guess==total)
 				{
 					JOptionPane.showMessageDialog(null,"Congratulations! You got the answer! It was "+total);
