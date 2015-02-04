@@ -1,5 +1,8 @@
-package GameForKids;
-
+/*	Program: Simple Math Game
+ * 	Programmers: Jared Schwartz, Jackson Lee, Cameron Kurtz
+ * 	Purpose: To help kids in elementary school practice math.
+ * 
+ */
 import java.util.Random;
 
 import javax.swing.ImageIcon;
@@ -12,20 +15,21 @@ public class game {
 		final String[] choices = {"Addition", "Subtraction", "Multiplication"}; // what are the choices that they can do?
 		final int NUMBER_OF_QUESTIONS = 5;
 		String userChoice=null;
-		int score=0;
-		int total=0;
+		int score=0; // calculated at the end of how many right of NUMBER_OF_QUESTIONS
+		int total=0; // total of either addition, subtraction, multiplication of a and b
 		int a=0,
 			b=0,
-			guess=0,
-			questionsAsked=0;
-		ImageIcon picture = new ImageIcon("tum.jpg");
+			guess=0, // the guess that the user makes, to be compared to total
+			questionsAsked=0; // counts up to NUMBER_OF_QUESTIONS
+		ImageIcon happyscore = new ImageIcon("/JavaProgramming/src/resources/tum.jpg");
+		ImageIcon sadscore = new ImageIcon("/JavaProgramming/src/resources/sadguy.jpg");
 		final String choiceLabel = "Pick a math type to solve!"; // used in line 15 to display the focus of the box
 		
-		Random gen = new Random();
+		Random gen = new Random(); // used for generating numbers for problems
 		
 			userChoice = (String) JOptionPane.showInputDialog(null, choiceLabel,"Input", JOptionPane.QUESTION_MESSAGE,null,choices,choices[0]);
 			
-			while(userChoice==null)
+			while(userChoice==null) // while loop to have them decide if they want to quit
 			{
 				userChoice = JOptionPane.showInputDialog(null, "Are you sure you want to quit?",choiceLabel, JOptionPane.YES_NO_OPTION);
 				userChoice.toLowerCase();
@@ -131,8 +135,13 @@ public class game {
 				}
 			}
 		}
+		// end question asking
 		
-		JOptionPane.showMessageDialog(null,"Your score is: "+score+"/"+NUMBER_OF_QUESTIONS,"Your total", JOptionPane.PLAIN_MESSAGE, picture);
+		//start of output total score with images
+		if(score>=3)
+			JOptionPane.showMessageDialog(null,"Your score is: "+score+"/"+NUMBER_OF_QUESTIONS,"Your total", JOptionPane.PLAIN_MESSAGE, happyscore);
+		else if(score<3)
+			JOptionPane.showMessageDialog(null,"Your score is: "+score+"/"+NUMBER_OF_QUESTIONS,"Your total", JOptionPane.PLAIN_MESSAGE, sadscore);
 	}	
 }
 
